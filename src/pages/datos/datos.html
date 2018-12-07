@@ -1,0 +1,58 @@
+  <ion-header>
+    <ion-navbar color="1" text-center>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Mis Datos</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+  <ion-content padding class="background">
+        <h5>
+          <img src="assets/imgs/poli.png" width="35%" height="35%" >
+        </h5>
+      <ion-card-content>
+        <ion-list *ngFor="let user of users; let first = first;">
+          <ion-list *ngIf='first' >
+          <h2>Documento</h2>
+          <h5>{{user.nombretipoDocumento}} N°</h5>
+          <h5>{{user.numeroIdentificacion}}</h5>
+          <h2 >Nombres</h2>
+          <h5>{{user.nombre}}</h5>
+          <h2>Apellidos</h2>
+          <h5>{{user.apellidos}}</h5>
+          <h2>Dirección</h2>
+          <h5>{{user.domicilioEstudiante}}</h5>
+          <h2>Celular</h2>
+            <div class="divEditar">
+            <h5>{{user.celular}}</h5>
+            <ion-icon class="icon" (click)="editar('celular')" name="cloud-upload">Editar</ion-icon>
+            </div>
+          <h2>Teléfono</h2>
+            <div class="divEditar">
+            <h5>{{user.telefono}}</h5>
+            <ion-icon class="icon" (click)="editar('telefono')" name="cloud-upload">Editar</ion-icon>
+            </div>
+          <h2>Fecha de Nacimiento</h2>
+          <h5>{{user.fechaNacimientoString}}</h5>
+          <h2>Correo electrónico Personal</h2>
+            <div class="divEditar">
+            <h5>{{user.email}}</h5>
+            <ion-icon class="icon" (click)="editar('email')" name="cloud-upload">Editar</ion-icon>
+            </div>
+          <h2>Correo electrónico Institucional</h2>
+          <h5>NO DISPONIBLE</h5>
+          <h2>Estado Civil</h2>
+            <div class="divEditar">
+            <h5>{{user.estadoCivil}}</h5>
+            <ion-icon class="icon" (click)="editar('estado civil')" name="cloud-upload">Editar</ion-icon>
+            </div>
+          <h2>Género</h2>
+          <h5>{{user.genero}}</h5>
+          </ion-list>
+        </ion-list>
+      </ion-card-content>
+        <!-- <ion-card-content> <button ion-button block color="boton" (click)="editar()">Editar Datos</button></ion-card-content> -->
+
+    </ion-content>

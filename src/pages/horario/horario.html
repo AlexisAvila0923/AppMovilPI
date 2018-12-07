@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="1" text-center>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Horario</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card-content>
+    <h5>
+        <img src="assets/imgs/poli.png" width="35%" height="35%" >
+    </h5>
+    <div>
+      <h1>{{cicloAcademico}}</h1>
+      <ion-select [(ngModel)]="fac" class="lista" [selectOptions]="selectOptions" okText="Aceptar" cancelText="Cancelar">
+        <ion-option *ngFor="let fac of facultades" [value]="fac">{{fac}}</ion-option>
+      </ion-select>
+    </div>
+    <ion-list class="backgroung">
+      <div><button ion-button (click)="presentPopoverDia('1')" color="3" block>Lunes</button></div>
+      <div><button ion-button (click)="presentPopoverDia('2')" color="3" block>Martes</button></div>
+      <div><button ion-button (click)="presentPopoverDia('3')" color="3" block>Miércoles</button></div>
+      <div><button ion-button (click)="presentPopoverDia('4')" color="3" block>Jueves</button></div>
+      <div><button ion-button (click)="presentPopoverDia('5')" color="3" block>Viernes</button></div>
+      <div><button ion-button (click)="presentPopoverDia('6')" color="3" block>Sábado</button></div>
+    </ion-list>
+  </ion-card-content>  
+</ion-content>

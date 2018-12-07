@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="1" text-center>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Actualización de datos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <h5>
+    <img src="assets/imgs/poli.png" width="35%" height="35%" >
+  </h5>
+  <h5>Etapa Beta / Considerando la etapa actual de la app, los cambios serán realizados
+    en la base de datos de pruebas
+  </h5>
+  <div *ngIf="formNumbersVisibility" class="form">
+    <h5>Digite su nuevo {{campo}}</h5>
+    <ion-input class="formInput" type="tel" [(ngModel)]="nuevaInfo"></ion-input>  
+    <h5>Es importante para la institución mantenerse en contacto con los estudiantes, la información
+      suministrada nos permite notificarlo de eventos, procesos y novedades.<br> 
+      Para complementar el cambio de su {{campo}} pulse el botón enviar.
+    </h5>
+    <button ion-button (click)="enviarCodigo()" round color="1" icon-start><ion-icon name="send"></ion-icon> Enviar</button>
+  </div>
+  <div *ngIf="formCivilStatusVisibility" class="form">
+    <h5>Seleccione su nuevo {{campo}}</h5>
+    <ion-select [(ngModel)]="nuevaInfo" class="lista" [selectOptions]="selectOptions" okText="Aceptar" cancelText="Cancelar">
+      <ion-option *ngFor="let ec of listaEstadoCivil" [value]="ec.value">{{ec.estado}}</ion-option>
+    </ion-select>
+    <h5>Es importante para la institución mantenerse en contacto con los estudiantes, la información
+        suministrada nos permite notificarlo de eventos, procesos y novedades.<br> 
+        Para completar el cambio de su {{campo}} pulse el botón enviar.
+    </h5>
+    <button ion-button (click)="enviarCodigo()" round color="1" icon-start><ion-icon name="send"></ion-icon> Enviar</button>
+  </div>
+  <div *ngIf="formEmailVisibility" class="form">
+    <h5>Digite su nuevo {{campo}}</h5>
+    <ion-input class="formInput" type="email" [(ngModel)]="nuevaInfo"></ion-input>    
+    <h5>Es importante para la institución mantenerse en contacto con los estudiantes, la información
+        suministrada nos permite notificarlo de eventos, procesos y novedades.<br> 
+        Para completar el cambio de su {{campo}} pulse el botón enviar.
+    </h5>
+    <button ion-button (click)="enviarCodigo()" round color="1" icon-start><ion-icon name="send"></ion-icon> Enviar</button>
+  </div>

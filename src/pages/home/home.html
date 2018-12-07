@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="1" text-center>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <ion-card-content>
+  <div><img src="assets/imgs/poli.png" width="35%" height="35%"></div>
+  <h3>Demo</h3>
+  <ion-list *ngFor="let info of infoEst; let f = first;">
+    <ion-list *ngIf="f">
+      <ion-list *ngFor="let item of info.datosPlanSede">
+        <h3>{{item.nombreSede}}</h3>
+        <h4>{{item.nombrePlan}}</h4>        
+      </ion-list>
+    </ion-list>           
+  </ion-list>
+  <h3>Bienvenidos</h3>
+  <ion-item *ngIf="showUserFB">
+      <ion-avatar item-left>
+      <img [src]="userFB.picture.data.url" alt="">
+      </ion-avatar>
+      <h2>{{userFB.name}}</h2>
+      <p>{{userFB.email}}</p>
+  </ion-item>
+  </ion-card-content>  
+  <ion-card-content>  
+    <h1>Te daremos una breve explicación de nuestra APP</h1>
+    <p>- El panel del menú esta ubicado en la parte izquierda, puedes desplegarlo
+      desde el icono o desliza la pantalla desde el borde izquierdo hacia la derecha. </p>
+    <p>- Las diferentes secciones te ofrecen la información que necesitas del ciclo académico vigente.</p>
+    <div>
+      <button ion-button round color="1" menuToggle>Empezar</button>
+    </div>    
+  </ion-card-content>
+</ion-content>

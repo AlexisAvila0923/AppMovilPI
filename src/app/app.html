@@ -1,0 +1,27 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color = "1">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="background">
+    <p align="center">
+      <img src="assets/imgs/poli.png" width="38%" height="38%">
+    </p>
+    <h3 class="contacto">Para reportar errores o problemas de la aplicación, puede escribir a
+        poliappc80@gmail.com o nuestro WhatsApp <a href="https://wa.me/573176215146">3176215146</a>
+    </h3>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="background">
+        <ion-icon item-left [name]="p.icon" color="1"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+    <h3 class="contacto">Demo</h3>  
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

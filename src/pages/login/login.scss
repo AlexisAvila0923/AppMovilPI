@@ -1,0 +1,81 @@
+page-login {
+    .background{
+        background-image: url('../assets/imgs/diseño/POLI 2a.png');
+        width: 100%;
+       height: 100%;
+       align-self: auto;
+   }
+   h1{
+     text-align: center;
+     font-size: 20px;       
+   }   
+   h2{
+       text-align: center;
+       text-decoration-color: rgb(0, 0, 0) ; 
+       color: rgb(92, 91, 91);  
+       font-size:13px;
+       margin-right: 15%;
+       margin-left: 15%;
+   }
+   h3{
+       color: rgb(92, 91, 91);
+       font-size:13px; 
+   }
+   
+   h5{
+       text-align: left;
+       text-decoration-color: rgb(247, 243, 243) ; 
+       color: #fff;  
+       font-size:12px;   
+   }
+
+
+   .scroll-content{
+       align-content: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       text-align: center;
+   }
+   
+   ion-card.card{
+       box-shadow: 0px;
+       background: rgba(0, 0, 0, 0.1);
+
+   }
+
+   a, p,
+   ion-card-header.card-header{
+       color: rgb(25, 22, 150);
+       border-radius: 1px;
+   }
+
+
+
+   .item{       
+       background: rgba(0, 0, 0, 0);
+        border-block-end-color: rgb(3, 1, 1);      
+
+       .text-input, {
+           color: rgb(5, 3, 3);
+       }
+   }
+
+   .hr {
+       border-bottom: 1px solid rgb(51, 7, 247);
+       margin: 10px 0;
+       width: 100%;
+     } 
+
+   .text{
+       text-decoration-color: white;  
+    }
+
+    .alert{
+        background-color: red;
+        text-align: justify;
+    }
+
+    
+    
+}

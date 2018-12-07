@@ -1,0 +1,48 @@
+page-actualiza-datos {
+    .background{
+        background-image: url('../assets/imgs/diseño/POLI 3a.png');
+        width: 100%;
+       height: 100%;
+       align-self: auto;
+ 
+   }
+
+   h5{
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+    
+    h2{
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        background-color: rgba(8, 10, 121, 0.9);
+    }
+
+    .cont{
+        background-color: transparent;
+    }
+
+    .form{
+        text-align: center;
+    }
+
+    .formInput{
+        background-color: rgba(255, 255, 255, 0.651);
+        max-width: 60% !important;
+        font-weight: bold;
+        font-size: 15px;
+        margin-inline-start: 20%;
+        margin-inline-end: 20%;
+    }
+
+    .lista{
+        background-color: rgba(255, 255, 255, 0.651);
+        max-width: 100% !important;
+        text-align: center;
+        font-weight: bold;
+    }
+
+}

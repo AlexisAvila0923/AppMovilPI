@@ -1,0 +1,34 @@
+<!--
+  Generated template for the DiaemergentePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="1" text-center>
+      <!--<button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>-->
+      <ion-toolbar><h4>{{dia}}</h4></ion-toolbar>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="background">
+  <ion-list *ngFor="let info of horarioDia">
+    <div class="encabezado">
+      <h2>{{info.nombreAsignatura}}</h2>
+    </div>
+    <div class="bloque">
+      <h2>Profesor:</h2>
+      <h1>{{info.nombreProfesor}}</h1>
+      <h2>Aula:</h2>
+      <h1>{{info.aula}}</h1>
+      <h2>Hora:</h2>
+      <h1>{{info.horaInicialAsignatura}} - {{info.horaFinalAsignatura}}</h1>
+    </div>    
+  </ion-list>
+  <div *ngIf="horarioDia.length==0"><!--Plantilla si no hay asignaturas para este día-->
+    <div class="encabezado"><h2>No tiene asignaturas programadas</h2></div>
+  </div>  
+</ion-content>

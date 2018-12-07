@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="1" text-center>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Notas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <h5>
+    <img src="assets/imgs/poli.png" width="35%" height="35%" >
+  </h5>
+  <div *ngFor="let u of user; let f = first">
+    <div *ngIf="f">
+      <h3>{{u.nombre}} {{u.apellidos}}</h3>
+      <h3>{{u.numeroIdentificacion}}</h3>      
+    </div>
+  </div>
+  <div>
+    <ion-select [(ngModel)]="selectedFac" (ionChange)="iniciarBusquedaNotas()" class="lista" [selectOptions]="selectOptions" okText="Aceptar" cancelText="Cancelar">
+      <ion-option *ngFor="let selectedItem of facultades" [value]="selectedItem.codigoPlan">Ciclo {{selectedItem.idCiclo}} | {{selectedItem.nombrePrograma}}</ion-option>
+    </ion-select>
+  </div>  
+  <ion-list>
+    <ion-card class="cont" *ngFor="let nota of notas">
+      <div class="titulo">
+        {{nota.nombreAsignatura}}
+      </div>    
+      <div *ngIf="evaluo; else noEvaluo"><!--NUEVA LINEA-->   
+        <div *ngIf="!((nota.nota1 || nota.nota2 || nota.nota3) || (nota.nota1===0 || nota.nota2===0 || nota.nota3===0))">
+          No hay notas cargadas a la fecha
+        </div>  
+        <div *ngIf="nota.nota1 || nota.nota1 === 0" class="contenido">
+          <div class="corte">Corte<br>1</div>
+          <div class="labelNota">Nota:</div>
+          <div class="valorNota">{{nota.nota1}}</div>
+          <div class="labelInasistencia">Inasistencia:</div>        
+          <div class="valorInasistencia" *ngIf="nota.inasistencia1; else cero">{{nota.inasistencia1}}</div>
+        </div>
+        <div *ngIf="nota.nota2 || nota.nota2 === 0" class="contenido">
+          <div class="corte">Corte<br>2</div>
+          <div class="labelNota">Nota:</div>
+          <div class="valorNota">{{nota.nota2}}</div>
+          <div class="labelInasistencia">Inasistencia:</div>        
+          <div class="valorInasistencia" *ngIf="nota.inasistencia2; else cero">{{nota.inasistencia2}}</div>           
+        </div>
+        <div *ngIf="nota.nota3 || nota.nota3 === 0" class="contenido">
+          <div class="corte">Corte<br>3</div>
+          <div class="labelNota">Nota:</div>
+          <div class="valorNota">{{nota.nota3}}</div>
+          <div class="labelInasistencia">Inasistencia:</div>        
+          <div class="valorInasistencia" *ngIf="nota.inasistencia3; else cero">{{nota.inasistencia3}}</div>          
+        </div>
+        <div *ngIf="nota.definitiva || nota.definitiva === 0" class="contenido">
+          <div class="definitiva">Definitiva</div>
+          <div class="definitiva">{{nota.definitiva}}</div>
+        </div>
+    </div>   
+    </ion-card>
+    <ng-template #cero><!--Plantilla si no hay valor en nota.inasistencias-->
+      <div class="valorInasistencia">-</div>
+    </ng-template>
+    <ng-template #noEvaluo>
+      <div>Para poder visualizar sus notas debe realizar al 100% la evaluación docente</div>
+    </ng-template>
+  </ion-list>
+</ion-content>
